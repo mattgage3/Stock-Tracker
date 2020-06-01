@@ -10,26 +10,26 @@
 <div id = "wrapper">
 <h1>Stock Tracker</h1>
 <form name = "search_for_stock" method = "post" action = '/'>
-		<input id = "search" type = "text" name = "stock" placeholder = "Ticker Symbol">
+		<input id = "search" type = "text" name = "stock" placeholder = "Ticker Symbol"  autocomplete = "off">
 		<input id = "search_btn" type = "submit" value = "Search">
 </form>
 	<hr>
 	<p id="companyName" th:text = "${companyName}"> 
 	<p id = "symbol" th:inline = "text">  ([[${symbol}]])</p>
-	<p id ="close" th:inline = "text"> $ [[${close}]]</p>
-	<p id = "tradeDay" th:inline = "text"> Closed: [[${latestTime}]]</p>
+	<p id ="close" th:inline = "text"> $ [[${latestPrice}]]</p>
+	<p id = "tradeDay" th:inline = "text"> [[${latestTime}]]</p>
 	
 	<table id="table" class = "table table-hover">
 		<tr>
-			<td>Price opened at:</td>
+			<td>Previous Open Price:</td>
 			<td th:inline = "text"> $ [[${open}]]</td>
 		</tr>
 		<tr>
-			<td>Highest previous price: </td>
+			<td>Previous High Price: </td>
 			<td th:inline = "text"> $ [[${high}]]</td>
 		</tr>
 		<tr>
-			<td>lowest previous price:</td>
+			<td>Previous Low Price:</td>
 			<td id = "low" th:inline = "text"> $ [[${low}]]</td>
 		</tr>
 	</table>
