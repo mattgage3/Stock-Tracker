@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Stock Tracker</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<link th:href="@{/css/style.css}" rel="stylesheet" />
+</head>
+<body>
+<div id = "wrapper">
+<h1>Stock Tracker</h1>
+<form name = "search_for_stock" method = "post" action = '/'>
+		<input id = "search" type = "text" name = "stock" placeholder = "Ticker Symbol">
+		<input id = "search_btn" type = "submit" value = "Search">
+</form>
+	<hr>
+	<p id="companyName" th:text = "${companyName}"> 
+	<p id = "symbol" th:inline = "text">  ([[${symbol}]])</p>
+	<p id ="close" th:inline = "text"> $ [[${close}]]</p>
+	<p id = "tradeDay" th:inline = "text"> Closed: [[${latestTime}]]</p>
+	
+	<table id="table" class = "table table-hover">
+		<tr>
+			<td>Price opened at:</td>
+			<td th:inline = "text"> $ [[${open}]]</td>
+		</tr>
+		<tr>
+			<td>Highest previous price: </td>
+			<td th:inline = "text"> $ [[${high}]]</td>
+		</tr>
+		<tr>
+			<td>lowest previous price:</td>
+			<td id = "low" th:inline = "text"> $ [[${low}]]</td>
+		</tr>
+	</table>
+</div>
+</body>
+</html>
