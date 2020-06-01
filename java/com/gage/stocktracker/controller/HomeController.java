@@ -20,7 +20,7 @@ public class HomeController {
 		model.addAttribute("symbol", StockDataService.companyTicker);
 		model.addAttribute("latestTime", StockDataService.tradeDay);
 		model.addAttribute("open", StockDataService.openPrice);
-		model.addAttribute("close", StockDataService.closePrice);
+		model.addAttribute("latestPrice", StockDataService.latestPrice);
 		model.addAttribute("high", StockDataService.highPrice);
 		model.addAttribute("low", StockDataService.lowPrice);
 
@@ -34,7 +34,7 @@ public class HomeController {
 		model.addAttribute("symbol", StockDataService.companyTicker);
 		model.addAttribute("latestTime", StockDataService.tradeDay);
 		model.addAttribute("open", StockDataService.openPrice);
-		model.addAttribute("close", StockDataService.closePrice);
+		model.addAttribute("latestPrice", StockDataService.latestPrice);
 		model.addAttribute("high", StockDataService.highPrice);
 		model.addAttribute("low", StockDataService.lowPrice);
 
